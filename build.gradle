@@ -13,7 +13,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
-apply plugin: 'war'
+//apply plugin: 'war' //for Heroku
 
 group = 'com.crud'
 version = '0.0.1-SNAPSHOT'
@@ -27,7 +27,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.projectlombok:lombok:1.18.0')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile('mysql:mysql-connector-java')
+    //compile('mysql:mysql-connector-java') // for Heroku
+    compile('org.postgresql:postgresql')
     testCompile('org.springframework.boot:spring-boot-starter-test')
-    providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+    //providedRuntime('org.springframework.boot:spring-boot-starter-tomcat') //for Heroku
 }
