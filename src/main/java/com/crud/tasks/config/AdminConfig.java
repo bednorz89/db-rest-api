@@ -9,4 +9,18 @@ import org.springframework.stereotype.Component;
 public class AdminConfig {
     @Value("${admin.mail}")
     private String adminMail;
+    @Value("${admin.name}")
+    private String adminName;
+    @Value("${info.company.name}")
+    private String companyName;
+    @Value("${info.app.name}")
+    private String appName;
+    @Value("${info.company.email}")
+    private String companyEmail;
+
+    public String companyInfo() {
+        return appName + " by " + companyName + " :: " + companyEmail;
+    }
+
+
 }
